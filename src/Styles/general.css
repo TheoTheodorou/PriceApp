@@ -1,0 +1,83 @@
+body{
+    margin: 0;
+    background-color: rgb(13, 19, 37);
+    font-family: Roboto, Arial;
+    max-width: 1400px;
+}
+
+.menue-bar{
+    display: flex;
+    flex-direction: row;
+}
+
+.top-bar{
+    display:flex;
+    flex:1;
+    height:25px;
+    background-color:darkblue;
+    -webkit-app-region: drag;
+
+}
+
+.menue-bar-buttons{
+    position: fixed;
+    width: 60px;
+    top: 8px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    -webkit-app-region: no-drag;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 55px;
+    margin-left: 40px;
+    margin-right: 40px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgba(80,57,165,0.4);
+    padding-bottom: 25px;
+    user-select: none;
+}
+
+.currency-buttons{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 280px;
+}
+
+.main-section{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    flex: 1;
+    height: 300px;
+}
+
+.mid-section-utility-buttons{
+    display: flex;
+    flex-direction: column;
+}
+
+.values{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    font-size: 14px;
+    margin-right: 50px;
+    margin-left: 50px;
+    user-select: none;
+}
+
+.main-section-center{
+    width: 30%;
+}
+
+.main-section-right{
+    width: 30%;
+}

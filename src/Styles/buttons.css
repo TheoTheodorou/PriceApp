@@ -1,0 +1,79 @@
+button{
+    font-family: Roboto, Arial;
+    font-weight: 400;
+    border-radius: 15px;
+    user-select: none;
+}
+
+.application-buttons{
+    display: flex;
+    justify-content: space-between;
+}
+
+.menue-bar button{
+    width: 15px;
+    height: 15px;
+    border-radius: 7.5px;
+}
+
+.exit-button{
+    background-color: rgb(255, 69, 58);
+    border: none;
+}
+
+.minimize-button{
+    background-color: rgb(255, 214, 10);
+    border: none;
+}
+
+.full-screen-button{
+    background-color:  rgb(50, 215, 75);
+    border: none;
+}
+
+.view-database-button, .update-currency-button, .edit-currency-button, .empty{
+    background-color: rgba(98,64,210,255);
+    color: white;
+    height: 35px;
+    width: 130px;
+    border-style: solid;
+    border-width: 0.5px;
+    border-color: rgba(80,57,165,255);
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.mid-section-utility-buttons{
+    margin-top: 100px;
+}
+
+.mid-section-utility-buttons button{
+    background-color: rgba(17,213,137,255);
+    color: white;
+    height: 35px;
+    width: 130px;
+    border-style: solid;
+    border-width: 0.5px;
+    border-color: rgba(42,173,132,255);
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:active{
+    opacity: 0.4;
+    transition: 0.15s;
+}
+
+.button-submit{
+    background-color: rgba(17,213,137,255);
+    color: white;
+    height: 22px;
+    width: 60px;
+    border-style: solid;
+    border-width: 0.5px;
+    border-color: rgba(42,173,132,255);
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-size: 12px;
+}
