@@ -1,23 +1,6 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
-
-var knex = require("knex")({
-  client:"sqlite3",
-  connection: {
-    filename: "./database.sqlite"
-  }
-})
-
-knex.schema.hasTable('items').then(function(exists) {
-  if (!exists) {
-    return knex.schema.createTable('items', function(t) {
-      t.increments('id').primary();
-      t.string('first_name', 100);
-      t.string('last_name', 100);
-      t.text('bio');
-    });
-  }
-});
+const DbMgr = require("./model.js");
 
 try {
   require('electron-reloader')(module)
@@ -41,6 +24,8 @@ const createWindow = () => {
       preload: path.join(__dirname, "preload.js")
     }
   });
+
+  DbMgr.InitialiseDB();
 
   // and load the index.html of the app.
   mainWindow.loadFile(path.join(__dirname, '../index.html'));
