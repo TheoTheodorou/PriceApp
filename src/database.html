@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="Styles/general.css">
     <link rel="stylesheet" href="Styles/buttons.css">
     <link rel="stylesheet" href="Styles/text-input.css">
+    <link rel="stylesheet" href="Styles/database.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,7 +24,6 @@
     <div class="menue-bar">
         <div class ="top-bar"></div>
         <div class="menue-bar-buttons">
-            <div></div>
             <div>
                 <button class="full-screen-button">
                 </button>
@@ -41,13 +41,54 @@
     </div>
 
 
-    <div class="header">
+    <div style="border: none;" class="header">
         <div>
             <button id="view-home-button" class="view-database-button">
-                View Home
+                &#8617;
+            </button>
+        </div>
+        <div>
+            <button id="import-button">
+                Import SKU/s
+            </button>
+        </div>
+        <div>
+            <button id="remove-button">
+                Remove SKU/s
             </button>
         </div>
         
+    </div>
+    <div style="margin-top: 0;" class="header">
+        <div>
+            <button>
+                View Currencies
+            </button>
+        </div>
+        <div>
+            <button>
+                View Currencies
+            </button>
+        </div>
+
+    </div>
+    <div class="table-container">
+        <table id="table" class="table">
+            <tr>
+                <th>SKU</th>
+                <th>Product Type</th>
+                <th>Style</th>
+                <th>Type</th>
+                <th>Category</th>
+            </tr>
+            <tr>
+                <td>Empty Cell</td>
+                <td>Empty Cell</td>
+                <td>Empty Cell</td>
+                <td>Empty Cell</td>
+                <td>Empty Cell</td>
+            </tr>
+          </table>
     </div>
 </body>
 </html>
