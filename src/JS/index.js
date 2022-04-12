@@ -19,7 +19,9 @@ knex.schema.hasTable('items').then(function(exists) {
   }
 });
 
-
+try {
+  require('electron-reloader')(module)
+} catch (_) {}
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
