@@ -11,27 +11,27 @@ button{
 }
 
 .menue-bar button{
-    width: 15px;
-    height: 15px;
-    border-radius: 7.5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 6px;
 }
 
 .exit-button{
-    background-color: rgb(255, 69, 58);
+    background-color: rgb(255,90,82);
     border: none;
 }
 
 .minimize-button{
-    background-color: rgb(255, 214, 10);
+    background-color: rgb(230,192,41);
     border: none;
 }
 
 .full-screen-button{
-    background-color:  rgb(50, 215, 75);
+    background-color:  rgb(82,194,44);
     border: none;
 }
 
-.view-database-button, .update-currency-button, .edit-currency-button, .empty{
+.header button{
     background-color: rgba(98,64,210,255);
     color: white;
     height: 35px;
@@ -44,7 +44,7 @@ button{
 }
 
 .mid-section-utility-buttons{
-    margin-top: 100px;
+    margin-top: 135px;
 }
 
 .mid-section-utility-buttons button{
@@ -55,13 +55,16 @@ button{
     border-style: solid;
     border-width: 0.5px;
     border-color: rgba(42,173,132,255);
-    margin-bottom: 20px;
     cursor: pointer;
     font-size: 16px;
 }
 
+.button-save, .button-preview{
+    margin-bottom: 20px;
+}
+
 button:active{
-    opacity: 0.4;
+    opacity: 0.6;
     transition: 0.15s;
 }
 
@@ -76,4 +79,22 @@ button:active{
     margin-bottom: 20px;
     cursor: pointer;
     font-size: 12px;
+}
+
+#import-button {
+    background-color: rgb(82,194,44);
+    border: none;
+}
+
+#remove-button{
+    background-color: rgb(255,90,82);
+    border: none;
+}
+
+#view-home-button{
+    font-size: 22px;
+    background-color: rgb(97, 97, 98);
+    padding-top: 3%;
+    border: none;
+    
 }

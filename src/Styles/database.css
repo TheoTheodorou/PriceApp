@@ -1,0 +1,18 @@
+.table-container{
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+.table{
+    color: white;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 0.7px solid rgb(255, 255, 255);
+  }
+  
+th{
+    padding: 10px;
+}

@@ -1,6 +1,6 @@
 body{
     margin: 0;
-    background-color: rgb(13, 19, 37);
+    background-color: rgba(4,22,51,255);
     font-family: Roboto, Arial;
     max-width: 1400px;
 }
@@ -14,25 +14,26 @@ body{
     display:flex;
     flex:1;
     height:25px;
-    background-color:darkblue;
+    background-color: rgb(26,32,44);
     -webkit-app-region: drag;
-
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(0, 0, 0);
 }
 
 .menue-bar-buttons{
     position: fixed;
-    width: 60px;
-    top: 8px;
-    right: 10px;
+    width: 53px;
+    top: 3px;
+    right: 11px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
     -webkit-app-region: no-drag;
 }
 
 .header{
     display: flex;
-    justify-content: space-between;
+   justify-content: space-between;
     margin-top: 55px;
     margin-left: 40px;
     margin-right: 40px;
@@ -41,13 +42,6 @@ body{
     border-bottom-color: rgba(80,57,165,0.4);
     padding-bottom: 25px;
     user-select: none;
-}
-
-.currency-buttons{
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    width: 280px;
 }
 
 .main-section{
@@ -62,6 +56,7 @@ body{
 .mid-section-utility-buttons{
     display: flex;
     flex-direction: column;
+
 }
 
 .values{
