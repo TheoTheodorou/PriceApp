@@ -5,7 +5,7 @@ const homeAPI = {
 }
 
 const databaseAPI = {
-    
+    ImportSku: () => ipcRenderer.send("import-sku")
 }
 
 const browserAPI = {

@@ -1,10 +1,10 @@
-const { app, BrowserWindow, ipcMain } = require('electron');
+const { app, BrowserWindow, ipcMain, dialog } = require('electron');
 const path = require('path');
 const DbMgr = require("./model.js");
 
 try {
   require('electron-reloader')(module)
-} catch (_) {}
+} catch (_) { }
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
@@ -17,15 +17,17 @@ const createWindow = () => {
   const mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
-    show:false,
-    autoHideMenuBar:true,
-    frame:false,
+    show: false,
+    autoHideMenuBar: true,
+    frame: false,
     webPreferences: {
       preload: path.join(__dirname, "preload.js")
     }
   });
 
   DbMgr.InitialiseDB();
+
+  DbMgr.AddSku("abcdefg");
 
   // and load the index.html of the app.
   mainWindow.loadFile(path.join(__dirname, '../index.html'));
@@ -49,8 +51,20 @@ const createWindow = () => {
     mainWindow.loadFile(path.join(__dirname, '../database.html'));
   })
 
-  ipcMain.on("view-home", (event) =>{
+  ipcMain.on("view-home", (event) => {
     mainWindow.loadFile(path.join(__dirname, '../index.html'));
+  })
+
+  ipcMain.on("import-sku", (event) => {
+    dialog.showOpenDialog({
+      defaultPath: app.getPath("desktop"),
+      filters: [
+        { name: 'CSV', extensions: ['csv'] },
+      ],
+      properties: ['openFile']
+    }).then(result => {
+      DbMgr.ImportSku(result.filePaths.toString());
+    })
   })
 
 
