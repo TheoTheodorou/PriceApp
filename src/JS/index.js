@@ -27,8 +27,6 @@ const createWindow = () => {
 
   DbMgr.InitialiseDB();
 
-  DbMgr.AddSku("abcdefg");
-
   // and load the index.html of the app.
   mainWindow.loadFile(path.join(__dirname, '../index.html'));
 
@@ -55,6 +53,10 @@ const createWindow = () => {
     mainWindow.loadFile(path.join(__dirname, '../index.html'));
   })
 
+  ipcMain.handle("load-sku", async (event, args) => {
+    return DbMgr.LoadSKU();
+  })
+
   ipcMain.on("import-sku", (event) => {
     dialog.showOpenDialog({
       defaultPath: app.getPath("desktop"),
@@ -65,6 +67,10 @@ const createWindow = () => {
     }).then(result => {
       DbMgr.ImportSku(result.filePaths.toString());
     })
+  })
+
+  ipcMain.on("delete-sku", (event, sku) => {
+    DbMgr.DeleteSKU(sku);
   })
 
 

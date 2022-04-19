@@ -1,4 +1,4 @@
-const {parse} = require('csv-parse');
+const { parse } = require('csv-parse');
 var fs = require('fs');
 var knex = require('knex')({
   client: 'sqlite3',
@@ -21,7 +21,7 @@ exports.InitialiseDB = () => {
         t.string('category');
 
         //t.foreign('type_id').references('type_id').inTable('type_price');
-      }).then(function(){
+      }).then(function () {
         console.log("Created SKU Table");
       })
     }
@@ -56,26 +56,51 @@ exports.InitialiseDB = () => {
   // });
 }
 
-exports.AddSku = (sku) => {
-  knex('sku').insert({sku: sku}).then(function(){
-    console.log("inserted");
+exports.LoadSKU = () => {
+  return knex.select().from('sku').then(function (data) {
+    var outputData = [];
+    for (var i = 0; i < data.length; i++) {
+      var input = data[i];
+      outputData.push([input.sku, input.product_type, input.style, input.product_type, input.category]);
+    }
+    return outputData;
   });
-  console.log(sku);
+}
+
+exports.AddSku = (sku) => {
+  knex('sku').insert({
+    sku: sku[0],
+    product_type: sku[1],
+    title: sku[2],
+    style: sku[3],
+    type_id: sku[4],
+    category: sku[5]
+  }).then(function () {
+    console.log("Added row");
+  });
+}
+
+exports.DeleteSKU = (sku) => {
+  knex('sku')
+  .where({ sku: sku })
+  .del()
 }
 
 exports.ImportSku = (filepath) => {
-  
-  var skuData=[];
+  var skuData = [];
   fs.createReadStream(filepath)
-  .pipe(parse({delimiter: '\n'}))
-  .on('data', function(skurow){
-    //console.log(skurow);
-    skuData.push(skurow);
-  })
-  .on('end', function(){
-    console.log(skuData);
-  })
-
-
-  
+    .pipe(parse({ delimiter: ',' }))
+    .on('data', function (skurow) {
+      //console.log(skurow);
+      skuData.push(skurow);
+    })
+    .on('end', function () {
+      skuData.forEach(element => {
+        var row = [];
+        for (let index = 0; index < element.length; index++) {
+          row.push(element[index]);
+        }
+        exports.AddSku(row);
+      });
+    })
 }
