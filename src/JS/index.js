@@ -15,8 +15,8 @@ if (require('electron-squirrel-startup')) {
 const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1600,
+    height: 1200,
     show: false,
     autoHideMenuBar: true,
     frame: false,
@@ -34,7 +34,7 @@ const createWindow = () => {
   mainWindow.on("ready-to-show", mainWindow.show);
 
   // Open the DevTools.
-  //mainWindow.webContents.openDevTools();
+  mainWindow.webContents.openDevTools();
 
   /// IPC
   ipcMain.on("close-window", (event) => {
@@ -69,8 +69,9 @@ const createWindow = () => {
     })
   })
 
-  ipcMain.on("delete-sku", (event, sku) => {
+  ipcMain.handle("delete-sku", async (event, sku) => {
     DbMgr.DeleteSKU(sku);
+    return true;
   })
 
 

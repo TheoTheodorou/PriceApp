@@ -86,7 +86,7 @@ button:active{
     border: none;
 }
 
-#remove-button{
+#delete-button{
     background-color: rgb(255,90,82);
     border: none;
 }
@@ -98,3 +98,4 @@ button:active{
     border: none;
     
 }
+

@@ -7,7 +7,7 @@ const homeAPI = {
 const databaseAPI = {
     LoadSku: () => ipcRenderer.invoke("load-sku"),
     ImportSku: () => ipcRenderer.send("import-sku"),
-    DeleteSku: () => ipcRenderer.send("delete-sku", sku)
+    DeleteSku: (sku) => ipcRenderer.invoke("delete-sku", sku)
 }
 
 const browserAPI = {
