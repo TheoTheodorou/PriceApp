@@ -48,6 +48,7 @@
   "dependencies": {
     "@electron/remote": "^2.0.8",
     "@vscode/sqlite3": "^5.0.8",
+    "csv-parse": "^5.0.4",
     "electron-db": "^0.15.7",
     "electron-squirrel-startup": "^1.0.0",
     "jQuery": "^1.7.4",
@@ -62,6 +63,7 @@
     "@electron-forge/maker-zip": "^6.0.0-beta.63",
     "electron": "^18.0.3",
     "electron-rebuild": "^3.2.7",
-    "electron-reloader": "^1.2.3"
+    "electron-reloader": "^1.2.3",
+    "tablefilter": "^0.7.2"
   }
 }

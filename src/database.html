@@ -13,7 +13,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.2/css/uikit.min.css" rel="stylesheet"> -->
+    <!-- <link href="https://cdn.datatables.net/1.11.5/css/dataTables.uikit.min.css" rel="stylesheet"> -->
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js" referrerpolicy="no-referrer"></script>
     <script defer src="JS/database.js"></script>
 
     
@@ -48,7 +54,7 @@
             </button>
         </div>
         <div>
-            <button id="import-button">
+            <button id="import-sku-button">
                 Import SKU/s
             </button>
         </div>
@@ -72,23 +78,9 @@
         </div>
 
     </div>
+    <button id="delete-button">Delete Selected Row</button>
     <div class="table-container">
-        <table id="table" class="table">
-            <tr>
-                <th>SKU</th>
-                <th>Product Type</th>
-                <th>Style</th>
-                <th>Type</th>
-                <th>Category</th>
-            </tr>
-            <tr>
-                <td>Empty Cell</td>
-                <td>Empty Cell</td>
-                <td>Empty Cell</td>
-                <td>Empty Cell</td>
-                <td>Empty Cell</td>
-            </tr>
-          </table>
+        <table id="table" class="table"></table>
     </div>
 </body>
 </html>
