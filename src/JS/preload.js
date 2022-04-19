@@ -1,11 +1,13 @@
-const {contextBridge, ipcRenderer} = require("electron");
+const { contextBridge, ipcRenderer } = require("electron");
 
 const homeAPI = {
 
 }
 
 const databaseAPI = {
-    ImportSku: () => ipcRenderer.send("import-sku")
+    LoadSku: () => ipcRenderer.invoke("load-sku"),
+    ImportSku: () => ipcRenderer.send("import-sku"),
+    DeleteSku: () => ipcRenderer.send("delete-sku", sku)
 }
 
 const browserAPI = {
@@ -14,6 +16,7 @@ const browserAPI = {
     ViewDatabase: () => ipcRenderer.send("view-database"),
     ViewHome: () => ipcRenderer.send("view-home")
 }
+
 
 contextBridge.exposeInMainWorld("home_api", homeAPI);
 contextBridge.exposeInMainWorld("database_api", databaseAPI);
