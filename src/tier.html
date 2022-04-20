@@ -14,13 +14,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
 
-    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.2/css/uikit.min.css" rel="stylesheet"> -->
-    <!-- <link href="https://cdn.datatables.net/1.11.5/css/dataTables.uikit.min.css" rel="stylesheet"> -->
 
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.6.0/dt-1.11.5/b-2.2.2/sp-2.0.0/sl-1.3.4/datatables.min.css"/>
+ 
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.6.0/dt-1.11.5/b-2.2.2/sp-2.0.0/sl-1.3.4/datatables.min.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
-    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js" referrerpolicy="no-referrer"></script>
-    <script defer src="JS/database.js"></script>
+    
+    
+    <script defer src="JS/tier.js"></script>
 
     
 </head>
@@ -59,7 +60,7 @@
             </button>
         </div>
         <div>
-            <button id="remove-button">
+            <button id="delete-button">
                 Remove SKU/s
             </button>
         </div>
@@ -67,20 +68,29 @@
     </div>
     <div style="margin-top: 0;" class="header">
         <div>
-            <button>
-                View Currencies
+            <button type="button" id="view-sku-button">
+                View Sku
             </button>
         </div>
         <div>
-            <button>
-                View Currencies
+            <button id="view-price-button">
+                View Prices
+            </button>
+        </div>
+        <div>
+            <button id="view-tier-button" class="disabled" disabled>
+                View Tier
+            </button>
+        </div>
+        <div>
+            <button id="view-conversion-button">
+                View Currency Conversion
             </button>
         </div>
 
     </div>
-    <button id="delete-button">Delete Selected Row</button>
     <div class="table-container">
-        <table id="table" class="table"></table>
+        <table id="table" class="table compact"></table>
     </div>
 </body>
 </html>

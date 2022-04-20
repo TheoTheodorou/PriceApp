@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Price File Bot
+    </title>
+    <link rel="stylesheet" href="Styles/general.css">
+    <link rel="stylesheet" href="Styles/buttons.css">
+    <link rel="stylesheet" href="Styles/text-input.css">
+    <link rel="stylesheet" href="Styles/database.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.6.0/dt-1.11.5/b-2.2.2/sp-2.0.0/sl-1.3.4/datatables.min.css"/>
+ 
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.6.0/dt-1.11.5/b-2.2.2/sp-2.0.0/sl-1.3.4/datatables.min.js"></script>
+    
+    
+
+    
+    
+    <script defer src="JS/sku.js"></script>
+
+    
+</head>
+
+<body>
+
+    <div class="menue-bar">
+        <div class ="top-bar"></div>
+        <div class="menue-bar-buttons">
+            <div>
+                <button class="full-screen-button">
+                </button>
+            </div>
+            <div>
+                <button id="minimize-button" class="minimize-button">
+                </button>
+            </div>
+            <div>
+                <button id="exit-button" class="exit-button">
+                </button> 
+            </div>
+        </div>
+    
+    </div>
+
+
+    <div style="border: none;" class="header">
+        <div>
+            <button id="view-home-button" class="view-database-button">
+                &#8617;
+            </button>
+        </div>
+        <div>
+            <button id="import-sku-button">
+                Import SKU/s
+            </button>
+        </div>
+        <div>
+            <button id="delete-button">
+                Remove SKU/s
+            </button>
+        </div>
+        
+    </div>
+    <div style="margin-top: 0;" class="header">
+        <div>
+            <button type="button" id="view-sku-button" class="disabled" disabled>
+                View Sku
+            </button>
+        </div>
+        <div>
+            <button id="view-price-button">
+                View Prices
+            </button>
+        </div>
+        <div>
+            <button id="view-tier-button">
+                View Tier
+            </button>
+        </div>
+        <div>
+            <button id="view-conversion-button">
+                View Currency Conversion
+            </button>
+        </div>
+
+    </div>
+    <div class="table-container">
+        <table id="table" class="table compact"></table>
+    </div>
+</body>
+</html>
