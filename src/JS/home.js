@@ -1,4 +1,5 @@
 
+
 // Hide items by default
 $('.enter-discount-percentage').hide();
 $('.bundle-value').hide();
@@ -24,7 +25,7 @@ $('#modeSwitch').on('change', function () {
 
 // Load Js Button Clicks
 document.getElementById("view-database-button").addEventListener("click", function () {
-    window.browser_api.ViewDatabase();
+    window.browser_api.ViewSku();
 });
 
 document.getElementById("exit-button").addEventListener("click", function () {

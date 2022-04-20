@@ -15,15 +15,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
 
 
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css"/>
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/jq-3.6.0/dt-1.11.5/b-2.2.2/sp-2.0.0/sl-1.3.4/datatables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.6.0/dt-1.11.5/b-2.2.2/sp-2.0.0/sl-1.3.4/datatables.min.css"/>
  
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/js/bootstrap.bundle.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/v/bs5/jq-3.6.0/dt-1.11.5/b-2.2.2/sp-2.0.0/sl-1.3.4/datatables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.6.0/dt-1.11.5/b-2.2.2/sp-2.0.0/sl-1.3.4/datatables.min.js"></script>
 
     
     
-    <script defer src="JS/database.js"></script>
+    <script defer src="JS/tier.js"></script>
 
     
 </head>
@@ -70,17 +68,22 @@
     </div>
     <div style="margin-top: 0;" class="header">
         <div>
-            <button>
+            <button type="button" id="view-sku-button">
+                View Sku
+            </button>
+        </div>
+        <div>
+            <button id="view-price-button">
                 View Prices
             </button>
         </div>
         <div>
-            <button>
+            <button id="view-tier-button" class="disabled" disabled>
                 View Tier
             </button>
         </div>
         <div>
-            <button>
+            <button id="view-conversion-button">
                 View Currency Conversion
             </button>
         </div>
