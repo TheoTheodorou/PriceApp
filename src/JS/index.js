@@ -1,6 +1,8 @@
 const { app, BrowserWindow, ipcMain, dialog } = require('electron');
 const path = require('path');
-const DbMgr = require("./model.js");
+const DbMgr = require("../models/model.js");
+const SkuMgr = require("../models/sku_model")
+
 
 try {
   require('electron-reloader')(module)
@@ -15,8 +17,8 @@ if (require('electron-squirrel-startup')) {
 const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1600,
+    height: 1200,
     show: false,
     autoHideMenuBar: true,
     frame: false,
@@ -34,7 +36,7 @@ const createWindow = () => {
   mainWindow.on("ready-to-show", mainWindow.show);
 
   // Open the DevTools.
-  //mainWindow.webContents.openDevTools();
+  mainWindow.webContents.openDevTools();
 
   /// IPC
   ipcMain.on("close-window", (event) => {
@@ -45,13 +47,25 @@ const createWindow = () => {
     mainWindow.minimize();
   })
 
-  ipcMain.on("view-database", (event) => {
-    mainWindow.loadFile(path.join(__dirname, '../database.html'));
-  })
-
   ipcMain.on("view-home", (event) => {
     mainWindow.loadFile(path.join(__dirname, '../index.html'));
   })
+
+  ipcMain.on("view-sku", (event) => {
+    mainWindow.loadFile(path.join(__dirname, '../sku.html'));
+  })
+
+  ipcMain.on("view-price", (event) => {
+    mainWindow.loadFile(path.join(__dirname, '../price.html'));
+  })
+
+  ipcMain.on("view-tier", (event) => {
+    mainWindow.loadFile(path.join(__dirname, '../tier.html'));
+  })
+
+  ipcMain.on("view-conversion", (event) => {
+    mainWindow.loadFile(path.join(__dirname, '../conversion.html'));
+  })  
 
   ipcMain.handle("load-sku", async (event, args) => {
     return DbMgr.LoadSKU();
@@ -69,9 +83,15 @@ const createWindow = () => {
     })
   })
 
-  ipcMain.on("delete-sku", (event, sku) => {
+  ipcMain.handle("delete-sku", async (event, sku) => {
     DbMgr.DeleteSKU(sku);
+    return true;
   })
+
+  ipcMain.on("add-home-sku", (event, sku) => {
+    SkuMgr.AddSku(sku);
+  })
+  
 
 
 };

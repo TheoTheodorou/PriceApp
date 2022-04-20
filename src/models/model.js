@@ -12,8 +12,7 @@ exports.InitialiseDB = () => {
   knex.schema.hasTable('sku').then(function (exists) {
     if (!exists) {
       return knex.schema.createTable('sku', function (t) {
-        t.increments('id').primary();
-        t.string('sku');
+        t.string('sku').primary();
         t.string('product_type');
         t.string('title');
         t.string('style');
@@ -84,6 +83,7 @@ exports.DeleteSKU = (sku) => {
   knex('sku')
   .where({ sku: sku })
   .del()
+  .then()
 }
 
 exports.ImportSku = (filepath) => {
