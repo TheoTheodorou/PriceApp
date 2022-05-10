@@ -131,13 +131,14 @@ button:active{
     margin-bottom: 8px;
     color: white;
     position: relative;
+    top: 3px;
   
     order: 0;
   }
   
   .selected::after {
     content: "";
-    background: url("../../radio/img/arrow-down.svg");
+    background: url("thumbnails/arrow-down.svg");
     background-size: contain;
     background-repeat: no-repeat;
   
@@ -145,7 +146,7 @@ button:active{
     height: 100%;
     width: 32px;
     right: 10px;
-    top: 5px;
+    top: 0px;
   
     transition: all 0.4s;
   }
@@ -157,7 +158,7 @@ button:active{
   
   .select-box .options-container.active + .selected::after {
     transform: rotateX(180deg);
-    top: -6px;
+    top: 0px;
   }
   
   .select-box .option,

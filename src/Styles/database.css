@@ -20,3 +20,9 @@ th{
 .selected{
     background-color: red;
 }
+
+.table-container{
+    max-height: 650px;
+    background-color: red;
+    overflow: scroll;
+}
