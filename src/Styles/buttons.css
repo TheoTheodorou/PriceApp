@@ -137,7 +137,7 @@ button:active{
   
   .selected::after {
     content: "";
-    background: url("/src/Styles/thumbnails/arrow-down.svg");
+    background: url("../../radio/img/arrow-down.svg");
     background-size: contain;
     background-repeat: no-repeat;
   

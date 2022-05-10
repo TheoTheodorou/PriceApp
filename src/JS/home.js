@@ -7,6 +7,7 @@ const optionsList = document.querySelectorAll(".option");
 
 selected.addEventListener("click", () => {
   optionsContainer.classList.toggle("active");
+  selected.checked = true
 });
 
 optionsList.forEach(o => {
@@ -16,13 +17,10 @@ optionsList.forEach(o => {
   });
 });
 
-// Hide items by default
-// $('.enter-discount-percentage').hide();
-// $('.bundle-value').hide();
+function handleClick(){
 
-//   Add switches to drop down
-$('#modeSwitch').on('change', function () {
-    var currentVal = $(this).find(":selected").val();
+    var currentVal = document.querySelector("input[name=select_mode]:checked").value
+    console.log(currentVal);
 
     if (currentVal === 'registerPrices') {
         $('.enter-discount-percentage').hide();
@@ -37,7 +35,31 @@ $('#modeSwitch').on('change', function () {
         $('.enter-discount-percentage').show();
         $('.bundle-value').show();
     }
-});
+}
+
+// Hide items by default
+$('.enter-discount-percentage').hide();
+$('.bundle-value').hide();
+
+// //   Add switches to drop down
+// $('.option').on('change', function () {
+//     console.log("switched");
+//     var currentVal = $(this).find(":selected").val();
+
+//     if (currentVal === 'registerPrices') {
+//         $('.enter-discount-percentage').hide();
+//         $('.bundle-value').hide();
+//     } else if (currentVal === 'discountPrices') {
+//         $('.enter-discount-percentage').show();
+//         $('.bundle-value').hide();
+//     } else if (currentVal === 'bundleValue') {
+//         $('.enter-discount-percentage').hide();
+//         $('.bundle-value').show();
+//     } else {
+//         $('.enter-discount-percentage').show();
+//         $('.bundle-value').show();
+//     }
+// });
 
 // Load Js Button Clicks
 document.getElementById("view-database-button").addEventListener("click", function () {
